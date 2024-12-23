@@ -110,7 +110,7 @@ void place(TreeNode *parent_node, aabb<v2f> parent_rect, PlaceOptions options = 
             place_current();
 
             float current_max_aspect = get_current_max_aspect();
-            if (current_max_aspect < best_max_aspect) {
+            if (current_max_aspect <= best_max_aspect) {
                 best_max_aspect = current_max_aspect;
                 continue;
             } else {
