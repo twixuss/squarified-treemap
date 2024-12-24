@@ -58,8 +58,8 @@ struct PlaceOptions {
 };
 
 void place(TreeNode *parent_node, aabb<v2f> parent_rect, PlaceOptions options = {}) {
+    parent_rect = extend(parent_rect, V2f(-options.padding));
     parent_node->rect = parent_rect;
-    parent_node->rect = extend(parent_node->rect, V2f(-options.padding));
     if (parent_node->children.count == 0) {
         return;
     }
